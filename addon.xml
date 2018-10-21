@@ -20,7 +20,7 @@ v.1.0.1
         </news>
         <summary lang="en_GB">black_eagle's mod to the Estuary skin by phil65.</summary>
         <description lang="en_GB">Various mods to Estuary, including Artist Slideshow support, Straming Radio Helper support and ability to customize home screen and home screen widgets. Based off pkscout's mod of Estuary.</description>
-        <disclaimer lang="en_GB">You can report issues at <https://github.com/the-black-eagle/skin.estuary.srh.version></disclaimer>
+        <disclaimer lang="en_GB">You can report issues at https://github.com/the-black-eagle/skin.estuary.srh.version></disclaimer>
         <platform>all</platform>
         <license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
         <assets>
