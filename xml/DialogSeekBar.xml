@@ -215,7 +215,7 @@
                 </control>
                 <control type="slider" id="403">
                     <left>0</left>
-                    <top>65</top>
+                    <top>175</top>
                     <width>100%</width>
                     <height>26</height>
                     <texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_bar.png</texturesliderbar>
@@ -248,7 +248,7 @@
                 </control>
                 <control type="slider" id="401">
                     <left>0</left>
-                    <top>65</top>
+                    <top>175</top>
                     <width>100%</width>
                     <height>26</height>
                     <texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_bar.png</texturesliderbar>

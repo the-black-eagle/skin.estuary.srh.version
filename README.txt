@@ -5,7 +5,7 @@ Modded to support script.radio.streaming.helper <https://github.com/the-black-ea
 
 Requires - script.artistslideshow, script.skin.helper.service, script.radio.streaming.helper
 
-Also includes pkscouts estuary mod which includes the following :
+Based off pkscouts estuary mod which includes the following :
 
 ability to reorder and turn off home screen left menu items
 ability to reorder and deactivate sub-menu widgets
