@@ -142,7 +142,7 @@
                     <scroll>true</scroll>
                     <wrapmultiline>true</wrapmultiline>
                     <autoscroll time="2000" delay="10000" repeat="5000"></autoscroll>
-                    <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography)]</label>
+                    <label>[COLOR blue]$INFO[Window(Visualisation).Property(srh.TrackInfo)][/COLOR] [CR] $INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography)]</label>
                     <visible>Skin.HasSetting(show_artist_bio)</visible>
                 </control>
                 <control type="group">
