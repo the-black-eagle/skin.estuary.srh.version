@@ -136,7 +136,7 @@
                     <width>30%</width>
                     <height>570</height>
                     <description>Artist Biography from Artist Slideshow</description>
-                    <align>right</align>
+                    <align>center</align>
                     <aligny>top</aligny>
                     <font>font13</font>
                     <scroll>true</scroll>

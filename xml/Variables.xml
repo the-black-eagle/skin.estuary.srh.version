@@ -5,7 +5,7 @@
         <value condition="String.IsEmpty(Window(Visualisation).Property(streaming-radio-helper-running))">$INFO[Player.Title]</value>
     </variable>
     <variable name="AlbumArtLookup">
-    <value condition="!String.IsEmpty(Window(Visualisation).Property(streaming-radio-helper-running)) + !String.IsEmpty(Window(Visualisation).Property(srh.AlbumCover))">$INFO[Window(Visualisation).Property(srh.AlbumCover)]</value>
+    <value condition="!String.IsEmpty(Window(Visualisation).Property(streaming-radio-helper-running)) + !String.IsEmpty(Window(Visualisation).Property(srh.AlbumCover)">$INFO[Window(Visualisation).Property(srh.AlbumCover)]</value>
     <value condition="!String.IsEmpty(Window(Visualisation).Property(streaming-radio-helper-running)) + !String.IsEmpty(Window(Visualisation).Property(srh.Artist.Thumb))">$INFO[Window(Visualisation).Property(srh.Artist.Thumb)]</value>
     <value condition="[String.IsEmpty(Window(Visualisation).Property(streaming-radio-helper-running)) | !Player.IsInternetStream]">$INFO[MusicPlayer.Cover]</value>
     </variable>

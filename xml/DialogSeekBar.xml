@@ -43,14 +43,25 @@
                     <animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
                 </control>
 
-                <control type="label">
-                    <right>320</right>
-                    <top>116</top>
+                <control type="label" id="21000">
+                    <right>332</right>
+                    <top>123</top>
                     <width>120</width>
                     <height>100</height>
-                    <label>[COLOR button_focus][B]$INFO[MusicPlayer.BitRate,, Khz][/B][/COLOR]</label>
+                    <font>font10</font>
+                    <align>center</align>
+                    <label>[COLOR button_focus]$INFO[MusicPlayer.BitRate,, Khz][/COLOR]</label>
                     <visible>Player.ShowInfo + !Player.ChannelPreviewActive + Window.IsActive(visualisation)</visible>
                     <animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
+                </control>
+                <!-- add box -->
+                <control type="image">
+                <right>333</right>
+                <top>115</top>
+                <width>120</width>
+                <height>50</height>
+                <texture colordiffuse="button_focus">flags/flag.png</texture>
+                <visible>!String.IsEmpty(MusicPlayer.BitRate)</visible>
                 </control>
 
                 <control type="image">
