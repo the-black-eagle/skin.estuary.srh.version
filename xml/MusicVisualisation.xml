@@ -80,12 +80,25 @@
                     <texture background="true">$INFO[Window(12006).Property(srh.Artist.Banner)]</texture>
                     <visible>[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv)</visible>
                 </control>
-<!-- My attempt to add a spinning cd !! -->
+
+                <!-- record Label -->
 
                 <control type="image">
+                    <top>935</top>
+                    <left>593</left>
+                    <width>120</width>
+                    <height>120</height>
+                    <aspectratio align="center">keep</aspectratio>
+                    <texture colordiffuse="white">resource://resource.images.recordlabels.white/$INFO[Window(12006).Property(srh.RecordLabel)].png</texture>
+                    <fadetime>400</fadetime>
+                    <visible>[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv) + !String.IsEmpty(Window(Visualisation).Property(srh.RecordLabel))</visible>
+                </control>
+<!-- My attempt to add a spinning cd !! -->
+
+                <control type="image"> <!-- Fake CD art provided by skin helper if no real cd art available -->
                     <animation effect="rotate" end="-360" center="auto" time="8000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
                     <include>Visible_Left</include>
-                    <visible>[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv)</visible>
+                    <visible>[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv) + String.IsEmpty(Window(Visualisation).Property(srh.RealCDArt))</visible>
                     <left>273</left>
                     <top>280</top>
                     <width>370</width>
@@ -93,7 +106,20 @@
                     <texture diffuse="cdart_diffuse.png" fallback="cd_fallback.png" background="true">http://localhost:52307/getthumb&amp;title=$VAR[CDArtLookup]</texture>
                     <aspectratio align="center" aligny="center">stretch</aspectratio>
                 </control>
-                <control type="image">
+
+                <control type="image"> <!-- Shows real cd art from tadb if it exists -->
+                    <animation effect="rotate" end="-360" center="auto" time="8000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+                    <include>Visible_Left</include>
+                    <visible>[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv) + !String.IsEmpty(Window(Visualisation).Property(srh.RealCDArt))</visible>
+                    <left>273</left>
+                    <top>280</top>
+                    <width>370</width>
+                    <height>370</height>
+                    <texture diffuse="cdart_diffuse.png" fallback="cd_fallback.png" background="true">$INFO[Window.Property(srh.RealCDArt)]</texture>
+                    <aspectratio align="center" aligny="center">stretch</aspectratio>
+                </control>
+
+                <control type="image"> <!-- cd art if not streaming online -->
                     <animation effect="rotate" end="-360" center="auto" time="8000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
                     <include>Visible_Left</include>
                     <visible>[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv) + !Player.IsInternetStream</visible>
@@ -104,7 +130,7 @@
                     <texture diffuse="cdart_diffuse.png" background="true">$INFO[Player.Folderpath]cdart.png</texture>
                     <aspectratio align="center" aligny="center">keep</aspectratio>
                 </control>
-                <control type="image">
+<!--                <control type="image"> <!-- cdart from local directory (if it exists) --> <!--
                     <animation effect="rotate" end="-360" center="auto" time="8000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
                     <include>Visible_Left</include>
                     <visible>[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv) + !String.IsEmpty(Window(Visualisation).Property(srh.Artist))</visible>
@@ -112,9 +138,9 @@
                     <top>280</top>
                     <width>370</width>
                     <height>370</height>
-                    <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(Visualisation).Property(srh.Musicpath)]/$INFO[Window.Property(srh.Artist)]/$INFO[Window.Property(srh.Album)]/cdart.png</texture>
+                    <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(Visualisation).Property(srh.Musicpath)]$INFO[Window.Property(srh.Artist)]/$INFO[Window.Property(srh.Album)]/cdart.png</texture>
                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                </control>
+                </control> -->
                 <control type="image">
                 <left>13</left>
                 <top>270</top>
