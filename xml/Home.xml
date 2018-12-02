@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<include condition="!String.IsEqual(Skin.String(skin_version),1.1.4)">LoadDefaultConfig</include>
+	<include condition="!String.IsEqual(Skin.String(skin_version),1.1.11)">LoadDefaultConfig</include>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<controls>
@@ -387,7 +387,7 @@
 						<param name="button_label" value="$LOCALIZE[31118]" />
 						<param name="button_onclick" value="ActivateWindow(addonbrowser)"/>
 						<param name="button_id" value="8800"/>
-						<param name="visible" value="[Integer.IsEqual(Container(8001).NumItems,0) | [Integer.IsEqual(Container(8001).NumItems,1) + !String.IsEqual(Skin.String(addon_categories),2)]] + ![Skin.HasSetting(no_addon_video) | Skin.HasSetting(no_addon_audio) | Skin.HasSetting(no_addon_program) | Skin.HasSetting(no_addon_image) | [Skin.HasSetting(no_addon_games) + System.GetBool(gamesgeneral.enable)] | [System.Platform.Android + Skin.HasSetting(no_addon_android)]]"/>
+						<param name="visible" value="[Integer.IsEqual(Container(8001).NumItems,0) | [Integer.IsEqual(Container(8001).NumItems,1) + !String.IsEqual(Skin.String(addon_categories),2)]] + ![Skin.HasSetting(addonslot1_show_none) | Skin.HasSetting(addonslot2_show_none) | Skin.HasSetting(addonslot3_show_none) | Skin.HasSetting(addonslot4_show_none) | Skin.HasSetting(addonslot5_show_none) | Skin.HasSetting(addonslot6_show_none)]"/>
 						<param name="button2_onclick" value="ActivateWindow(skinsettings)"/> 
 					</include>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
@@ -505,7 +505,7 @@
 					<include content="ImageWidget" condition="!System.HasPVRAddon">
 						<param name="text_label" value="$LOCALIZE[31143]" />
 						<param name="button_label" value="$LOCALIZE[31144]" />
-						<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://user/xbmc.pvrclient,return)"/>
+						<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.pvrclient,return)"/>
 						<param name="button_id" value="12400"/>
 						<param name="button2_onclick" value="ActivateWindow(skinsettings)"/> 
 					</include>
@@ -576,7 +576,7 @@
 					<include content="ImageWidget" condition="!System.HasPVRAddon">
 						<param name="text_label" value="$LOCALIZE[31143]" />
 						<param name="button_label" value="$LOCALIZE[31144]" />
-						<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://user/xbmc.pvrclient,return)"/>
+						<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.pvrclient,return)"/>
 						<param name="button_id" value="13400"/>
 						<param name="button2_onclick" value="ActivateWindow(skinsettings)"/> 
 					</include>
@@ -821,6 +821,7 @@
 							<param name="widget_header" value="$LOCALIZE[20094]"/>
 							<param name="widget_target" value="pictures"/>
 							<param name="list_id" value="4100"/>
+							<param name="icon_height" value="110"/>
 						</include>
 						<include condition="Skin.HasSetting(picture_categories_icons)" content="WidgetListCategoriesIcons">
 							<param name="content_path" value="sources://pictures/"/>
@@ -850,8 +851,8 @@
 					</control>
 					<include content="ImageWidget">
 						<param name="text_label" value="$LOCALIZE[31162]" />
-						<param name="button_label" value="$LOCALIZE[31110]" />
-						<param name="button_onclick" value="ActivateWindow(games)"/>
+						<param name="button_label" value="$LOCALIZE[31114]" />
+						<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://all/category.gameaddons,return)"/>
 						<param name="button_id" value="17100"/>
 						<param name="visible" value="!Integer.IsGreater(Container(17001).NumItems,0) + !Skin.HasSetting(no_games)"/>
 						<param name="button2_onclick" value="ActivateWindow(skinsettings)"/> 
@@ -873,6 +874,9 @@
 						<param name="visible" value="true"/>
 						<param name="button2_label" value="$LOCALIZE[13391]"/>
 						<param name="button2_onclick" value="EjectTray()"/>
+						<param name="button3_label" value="$LOCALIZE[600]"/>
+						<param name="button3_onclick" value="RipCD"/>
+						<param name="visible_3" value="String.IsEqual(System.DVDLabel,Audio-CD)"/>
 					</include>
 				</control>
 			</control>

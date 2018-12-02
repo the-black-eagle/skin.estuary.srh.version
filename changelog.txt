@@ -1,1 +1,5 @@
+v 1.0.2 - updated to include latest changes to estuary
+
+v 1.0.1 - updated to follow stock Estuary changes
+
 v 1.0.0 - Inital attempt
